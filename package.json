@@ -1,0 +1,23 @@
+{
+  "name": "lab_tdd_painter_decorator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha models/specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elicodes89/lab_tdd_painter_decorator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elicodes89/lab_tdd_painter_decorator/issues"
+  },
+  "homepage": "https://github.com/elicodes89/lab_tdd_painter_decorator#readme",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
