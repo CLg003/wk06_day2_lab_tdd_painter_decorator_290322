@@ -46,4 +46,16 @@ describe('Decorator' , function (){
         const actual = decorator.calculateCanPaintRoom(room2);
         assert.strictEqual(actual, false);
     })
+
+    it('should be able to paint room', function() {
+        decorator.paintRoom(room1);
+        const actual = room1.painted;
+        assert.strictEqual(actual, true);
+    })
+
+    it('should not be able to paint room', function() {
+        decorator.paintRoom(room2);
+        const actual = room1.painted;
+        assert.strictEqual(actual, false);
+    })
 });

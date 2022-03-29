@@ -23,4 +23,10 @@ Decorator.prototype.calculateCanPaintRoom = function(room) {
     }
 }
 
+Decorator.prototype.paintRoom = function(room) {
+    if (this.calculateCanPaintRoom(room)) {
+        room.painted = true;
+    }
+}
+
 module.exports = Decorator;
