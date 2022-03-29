@@ -17,9 +17,17 @@ describe('Decorator' , function (){
     it('should have a paint stock' , function (){
         const actual = decorator.paintStock;
         assert.deepStrictEqual(actual, [paint1, paint2, paint3]);
-    
-        
-
-
     });
+
+    it('should be able to add paint' , function(){
+        let paint4 = new PaintCan(1);
+        decorator.addPaint(paint4)
+        const actual = decorator.paintStock.length;
+        assert.strictEqual(actual, 4);
+    });
+
+    it('should be able to calculate total litres paint in stock', function() {
+        const actual = decorator.calculatePaintInStock();
+        assert.strictEqual(actual, 6);
+    })
 });
