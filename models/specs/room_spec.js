@@ -5,7 +5,7 @@ describe('Room' , function () {
     let room;
 
 beforeEach(function() {
-    room = new Room(5 , false);
+    room = new Room(5);
 })
 
 it('should have an area' , function (){
