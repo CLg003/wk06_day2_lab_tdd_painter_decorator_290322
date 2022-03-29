@@ -8,19 +8,24 @@ describe('Decorator' , function (){
     let paint1;
     let paint2;
     let paint3;
+    let room1;
+    let room2;
 
     beforeEach(function (){
         paint1 = new PaintCan(1);
         paint2 = new PaintCan(2);
         paint3 = new PaintCan(3);
         decorator = new Decorator([paint1, paint2, paint3]);
+        room1 = new Room(6);
+        room2 = new Room(10);
     });
-    it('should have a paint stock' , function (){
+
+    it('should have a paint stock', function() {
         const actual = decorator.paintStock;
         assert.deepStrictEqual(actual, [paint1, paint2, paint3]);
     });
 
-    it('should be able to add paint' , function(){
+    it('should be able to add paint', function() {
         let paint4 = new PaintCan(1);
         decorator.addPaint(paint4)
         const actual = decorator.paintStock.length;
@@ -32,9 +37,13 @@ describe('Decorator' , function (){
         assert.strictEqual(actual, 6);
     })
 
-    it ('should check can paint room' , function(){
-        let room = new Room(2)
-        const actual = decorator.calculateCanPaintRoom(room);
+    it ('should check can paint room', function() {
+        const actual = decorator.calculateCanPaintRoom(room1);
         assert.strictEqual(actual, true);
+    })
+    
+    it ('should check cannot paint room', function() {
+        const actual = decorator.calculateCanPaintRoom(room2);
+        assert.strictEqual(actual, false);
     })
 });

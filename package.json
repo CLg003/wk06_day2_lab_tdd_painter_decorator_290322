@@ -16,8 +16,8 @@
     "url": "https://github.com/elicodes89/lab_tdd_painter_decorator/issues"
   },
   "homepage": "https://github.com/elicodes89/lab_tdd_painter_decorator#readme",
-  "description": "",
   "devDependencies": {
     "mocha": "^9.2.2"
-  }
+  },
+  "description": ""
 }

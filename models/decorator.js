@@ -1,9 +1,8 @@
-const Decorator = function (paintStock){
+const Decorator = function (paintStock) {
     this.paintStock = paintStock;
-
 }
 
-Decorator.prototype.addPaint = function(paintCan){
+Decorator.prototype.addPaint = function(paintCan) {
     this.paintStock.push(paintCan);
 };
 
@@ -13,6 +12,15 @@ Decorator.prototype.calculatePaintInStock = function() {
         total += paintCan.litres;
     }
     return total;
+}
+
+Decorator.prototype.calculateCanPaintRoom = function(room) {
+    let paintLitres = this.calculatePaintInStock();
+    if (paintLitres >= room.area) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 module.exports = Decorator;
