@@ -18,4 +18,10 @@ it('should not be painted' , function (){
     assert.strictEqual(actual, false)
 })
 
+it('should be able to be painted', function() {
+    room.bePainted();
+    const actual = room.painted;
+    assert.strictEqual(actual, true);
+})
+
 });
