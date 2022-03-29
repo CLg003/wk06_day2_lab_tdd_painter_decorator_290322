@@ -25,7 +25,34 @@ Decorator.prototype.calculateCanPaintRoom = function(room) {
 
 Decorator.prototype.paintRoom = function(room) {
     if (this.calculateCanPaintRoom(room)) {
+        this.decreasePaintStock(room);
         room.painted = true;
+    }
+}
+
+Decorator.prototype.decreasePaintStock = function(room) {
+    let paintNeeded = room.area;
+    for (let i = this.paintStock.length - 1; i >= 0; i --) {
+        let paintCanLitres = this.paintStock[i].litres;
+        if (paintCanLitres <= paintNeeded) {
+            paintNeeded -= paintCanLitres;
+            this.paintStock[i].litres = 0;
+            if (paintNeeded === 0) {
+                break;
+            }
+        } else if (paintCanLitres > paintNeeded) {
+            this.paintStock[i].litres -= paintNeeded;
+            paintNeeded = 0;
+            break;
+        }
+    }
+}
+
+Decorator.prototype.removeEmptyPaintCans = function() {
+    for (i = this.paintStock.length - 1; i >= 0; i --) {
+        if (this.paintStock[i].litres === 0) {
+            this.paintStock.splice(i, 1);
+        }
     }
 }
 
